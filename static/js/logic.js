@@ -1,14 +1,5 @@
 
-// d3.select("#submit").on("click", SaveItem);
-
-// function SaveItem() {	
-//   d3.event.preventDefault();
-// 	var productSelector = d3.select("#product_name").node().value; 
-// 	var selectedProd = d3.select('#product_name option:checked').text();	
-// 	var qty = d3.select("#myInputQuantity").property("value");
-// 	localStorage.setItem(selectedProd, qty);
-// 	doShowAll();	
-// }
+var prod_list = [];
 
 function ClearAll() {
 	localStorage.clear();
@@ -18,11 +9,15 @@ function ClearAll() {
 function doShowAll() {
 		var key = "";
 		var list = "<tr><th>Product</th><th>Quantity</th></tr>\n";
-		var i = 0;
+    var i = 0;
+    var prodDetatils = '';
+    prod_list = [];
 		//for more advance feature, you can set cap on max items in the cart
 		for (i = 0; i <= localStorage.length-1; i++) {
-			key = localStorage.key(i);
-			list += "<tr><td>" + key[1] + "</td>\n<td>" + localStorage.getItem(key) + "</td></tr>\n";
+      key = localStorage.key(i);
+      prodDetatils = key.split(",");
+      prod_list.push(prodDetatils[0]); 
+			list += "<tr><td>" + prodDetatils[1] + "</td>\n<td>" + localStorage.getItem(key) + "</td></tr>\n";
 		}
 		//if no item exists in the cart
 		if (list == "<tr><th>Product</th><th>Quantity</th></tr>\n") {
