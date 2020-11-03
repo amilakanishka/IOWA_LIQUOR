@@ -45,7 +45,7 @@ function handleSubmit() {
   console.log(prod_list);
   var basket_items = prod_list.join(',');
   console.log(basket_items);
-  var iowaPath = `/get_recommendations_for_product_selection/${basket_items}`
+  var iowaPath = `/get_recommendations_for_products_selection/${basket_items}`
   var iowaPath2 = `/get_recommendations_for_store/${customerSiteSelector}`
   var iowaPath3 = `/get_popularity_recommendations/${customerSiteSelector}`
 

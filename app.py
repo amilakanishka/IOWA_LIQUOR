@@ -119,10 +119,24 @@ def get_product_categories():
 
     return jsonify(prodCat)  
 
-@app.route("/get_recommendations_for_product_selection/<int_list:item_ids>", methods=['GET'])
-def get_recommendations_for_product_selection(item_ids):
+@app.route("/get_recommendations_for_product_selection/<int:item_id>", methods=['GET'])
+def get_recommendations_for_product_selection(item_id):
 
-    item_selected = item_ids.split(',')
+    item_selected = []
+    item_selected.append(item_id)
+    data1 = modelC.recommend_from_interactions(item_selected)
+    prod_list = []
+    for prod in list(data1):
+        prod_list.append(prod['StockCode'])
+    
+    data = get_product_details(prod_list)
+    return jsonify(list(data))       
+
+@app.route("/get_recommendations_for_products_selection/<item_ids>", methods=['GET'])
+def get_recommendations_for_products_selection(item_ids):
+
+    item_selected = []
+    item_selected.append(int(i) for i in item_ids.split(','))
     data1 = modelC.recommend_from_interactions(item_selected)
     prod_list = []
     for prod in list(data1):
