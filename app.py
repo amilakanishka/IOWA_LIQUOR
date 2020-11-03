@@ -136,15 +136,16 @@ def get_recommendations_for_product_selection(item_id):
 def get_recommendations_for_products_selection(item_ids):
 
     item_selected = []
-    item_selected.append(int(i) for i in item_ids.split(','))
+    for i in item_ids.split(','):
+        item_selected.append(int(i))
     data1 = modelC.recommend_from_interactions(item_selected)
     prod_list = []
     for prod in list(data1):
         prod_list.append(prod['StockCode'])
     
     data = get_product_details(prod_list)
-    # return jsonify(list(data))   
-    return jsonify(item_selected)       
+    return jsonify(list(data))   
+    # return jsonify(item_selected)       
 
 @app.route("/team")
 def team():
