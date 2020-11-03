@@ -22,7 +22,7 @@ function doShowAll() {
 		//for more advance feature, you can set cap on max items in the cart
 		for (i = 0; i <= localStorage.length-1; i++) {
 			key = localStorage.key(i);
-			list += "<tr><td>" + key + "</td>\n<td>" + localStorage.getItem(key) + "</td></tr>\n";
+			list += "<tr><td>" + key[1] + "</td>\n<td>" + localStorage.getItem(key) + "</td></tr>\n";
 		}
 		//if no item exists in the cart
 		if (list == "<tr><th>Product</th><th>Quantity</th></tr>\n") {
@@ -38,10 +38,11 @@ d3.select("#submit").on("click", handleSubmit);
 function handleSubmit() {
 // Prevent the page from refreshing
   d3.event.preventDefault();
-	// var productSelector = d3.select("#product_name").node().value; 
-	var selectedProd = d3.select('#product_name option:checked').text();	
+	var prodID = d3.select("#product_name").node().value; 
+  var prodText = d3.select('#product_name option:checked').text();
+  var prod_details = [prodID,prodText];  	
 	var qty = d3.select("#myInputQuantity").property("value");
-	localStorage.setItem(selectedProd, qty);
+	localStorage.setItem(prod_details, qty);
 	doShowAll();	  
 
 // Select the input value from the index.html
