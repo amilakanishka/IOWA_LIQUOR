@@ -143,7 +143,8 @@ def get_recommendations_for_products_selection(item_ids):
         prod_list.append(prod['StockCode'])
     
     data = get_product_details(prod_list)
-    return jsonify(list(data))          
+    # return jsonify(list(data))   
+    return jsonify(item_selected)       
 
 @app.route("/team")
 def team():
