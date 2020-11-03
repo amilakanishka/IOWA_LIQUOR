@@ -7,7 +7,7 @@ function SaveItem() {
 	var qty = d3.select("#myInputQuantity").property("value");
 	console.log(qty);
 	console.log(productSelector);
-	console.log(selectedText);
+	console.log(selectedProd);
 	localStorage.setItem(selectedProd, qty);
 	doShowAll();	
 	
