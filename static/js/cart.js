@@ -3,11 +3,11 @@ d3.select("#submit").on("click", SaveItem);
 function SaveItem() {
     d3.event.preventDefault();
 	var productSelector = d3.select("#product_name").node().value; 
-	// var selectedText = d3.select('#product_name option:checked').text();	
+	var selectedText = d3.select('#product_name').text();	
 	var qty = d3.select("#myInputQuantity").property("value");
 	console.log(qty);
 	console.log(productSelector);
-	// print(selectedText);
+	console.log(selectedText);
 	localStorage.setItem(productSelector, qty);
 	doShowAll();
 	
