@@ -119,11 +119,11 @@ def get_product_categories():
 
     return jsonify(prodCat)  
 
-@app.route("/get_recommendations_for_product_selection/<int:item_id>", methods=['GET'])
-def get_recommendations_for_product_selection(item_id):
+@app.route("/get_recommendations_for_product_selection/<int_list:item_ids>", methods=['GET'])
+def get_recommendations_for_product_selection(item_ids):
 
     item_selected = []
-    item_selected.append(item_id)
+    item_selected = item_ids.split(',')
     data1 = modelC.recommend_from_interactions(item_selected)
     prod_list = []
     for prod in list(data1):

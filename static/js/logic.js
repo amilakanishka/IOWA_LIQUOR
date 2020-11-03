@@ -1,6 +1,8 @@
 
 var prod_list = [];
 
+d3.select("#submit").on("click", handleSubmit);
+
 function ClearAll() {
 	localStorage.clear();
 	doShowAll();
@@ -28,22 +30,22 @@ function doShowAll() {
 		document.getElementById('list').innerHTML = list;
 }
 
-d3.select("#submit").on("click", handleSubmit);
-
 function handleSubmit() {
 // Prevent the page from refreshing
   d3.event.preventDefault();
-	var prodID = d3.select("#product_name").node().value; 
   var prodText = d3.select('#product_name option:checked').text();
-  var prod_details = [prodID,prodText];  	
+  var productSiteSelector = d3.select("#product_name").node().value; 
+  var customerSiteSelector = d3.select("#store_number").node().value;  
+  var prod_details = [productSiteSelector,prodText];  	
 	var qty = d3.select("#myInputQuantity").property("value");
 	localStorage.setItem(prod_details, qty);
 	doShowAll();	  
 
 // Select the input value from the index.html
-  var productSiteSelector = d3.select("#product_name").node().value; 
-  var customerSiteSelector = d3.select("#store_number").node().value;  
-  var iowaPath = `/get_recommendations_for_product_selection/${productSiteSelector}`
+  console.log(prod_list);
+  var basket_items = prod_list.join(',');
+  console.log(basket_items);
+  var iowaPath = `/get_recommendations_for_product_selection/${basket_items}`
   var iowaPath2 = `/get_recommendations_for_store/${customerSiteSelector}`
   var iowaPath3 = `/get_popularity_recommendations/${customerSiteSelector}`
 
@@ -57,10 +59,7 @@ d3.select("#recommend-popular").html("");
 var iowaList;
 
 d3.json(iowaPath)
-  .then(data => {iowaList = data; 
-
-  console.log("iowaList");
-  console.log(iowaList);
+  .then(data => {iowaList = data;
   
   // TEMP ONLY - replace with recommender data later
   // Place 4 products for now *** can change
