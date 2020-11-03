@@ -4,7 +4,7 @@ function SaveItem() {
     d3.event.preventDefault();
 	var productSelector = d3.select("#product_name").node().value; 
 	// var selectedText = d3.select('#product_name option:checked').text();	
-	var qty = d3.select("#myInputQuantity").text();
+	var qty = d3.select("#myInputQuantity").property("value");
 	console.log(qty);
 	console.log(productSelector);
 	// print(selectedText);
