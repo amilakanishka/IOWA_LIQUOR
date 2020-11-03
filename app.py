@@ -117,20 +117,7 @@ def get_product_categories():
         cate["category_name"] = category_name             
         prodCat.append(cate)    
 
-    return jsonify(prodCat)  
-
-@app.route("/get_recommendations_for_product_selection/<int:item_id>", methods=['GET'])
-def get_recommendations_for_product_selection(item_id):
-
-    item_selected = []
-    item_selected.append(item_id)
-    data1 = modelC.recommend_from_interactions(item_selected)
-    prod_list = []
-    for prod in list(data1):
-        prod_list.append(prod['StockCode'])
-    
-    data = get_product_details(prod_list)
-    return jsonify(list(data))       
+    return jsonify(prodCat)       
 
 @app.route("/get_recommendations_for_products_selection/<item_ids>", methods=['GET'])
 def get_recommendations_for_products_selection(item_ids):
@@ -144,8 +131,7 @@ def get_recommendations_for_products_selection(item_ids):
         prod_list.append(prod['StockCode'])
     
     data = get_product_details(prod_list)
-    return jsonify(list(data))   
-    # return jsonify(item_selected)       
+    return jsonify(list(data))       
 
 @app.route("/team")
 def team():
