@@ -405,6 +405,11 @@ h6 {
     display: block;
   }
 
+  #items_table{
+    margin-left:auto; 
+    margin-right:0;
+  }
+
 /* Test CSS for Product Name */
 
 /* #prodDiv {
