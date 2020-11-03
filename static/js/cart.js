@@ -5,8 +5,8 @@ function SaveItem() {
 	var productSelector = d3.select("#product_name").node().value; 
 	// var selectedText = d3.select('#product_name option:checked').text();	
 	var qty = d3.select("#myInputQuantity").html(this.value);
-	print(myInputQuantity);
-	print(productSelector);
+	console.log(myInputQuantity);
+	console.log(productSelector);
 	// print(selectedText);
 	localStorage.setItem(selectedText, qty);
 	doShowAll();
