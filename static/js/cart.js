@@ -25,7 +25,7 @@ function doShowAll() {
 			list += "<tr><td>" + key + "</td>\n<td>" + localStorage.getItem(key) + "</td></tr>\n";
 		}
 		//if no item exists in the cart
-		if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
+		if (list == "<tr><th>Product</th><th>Quantity</th></tr>\n") {
 			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
 		}
 		//bind the data to html table
