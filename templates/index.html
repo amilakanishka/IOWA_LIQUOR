@@ -159,6 +159,31 @@
 
 
     </section>
+    <section>
+        <div id="product-grid">
+            <div class="txt-heading">Products</div>
+    
+            {% for product in prodDetailList %}
+    
+                <div class="product-item">
+                    <form method="post" action="/add">
+                        <div class="product-image"><img src="{{ product.image_url }}"></div>
+                        <div class="product-tile-footer">
+                            <div class="product-title">{{ product.item_description }}</div>
+                            <div class="product-price">&#8377; {{ product.price }}</div>
+                            <div class="cart-action">
+                                <input type="hidden" name="code" value="{{ product.item_number }}"/>
+                                <input type="number" class="product-quantity" name="quantity" value="1" size="2" />
+                                <input type="submit" value="Add to Cart" class="btnAddAction" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    
+            {% endfor %}
+        
+        </div>        
+    </section>
 
 <!-- SECTION 2 - ORDERING END-->
 
