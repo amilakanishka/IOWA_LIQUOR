@@ -117,7 +117,23 @@ def get_product_categories():
         cate["category_name"] = category_name             
         prodCat.append(cate)    
 
-    return jsonify(prodCat)       
+    return jsonify(prodCat)   
+
+@app.route("/get_product_category_details", methods=['GET'])
+def get_product_category_details():
+
+    product_list = []
+    prodDetailList = get_product_details(product_list)   
+
+    prodCat = []
+    for prod in prodDetailList:
+        cate = {}
+        cate["category"] = prod['category']
+        cate["item_number"] = prod['item_number']   
+        cate["item_description"] = prod['item_description']            
+        prodCat.append(cate)    
+
+    return jsonify(prodCat)          
 
 @app.route("/get_recommendations_for_products_selection/<item_ids>", methods=['GET'])
 def get_recommendations_for_products_selection(item_ids):
