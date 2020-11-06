@@ -40,7 +40,11 @@ def home():
     storeResults = session.query(Store_Details.store_number,Store_Details.store_name).all()
     prodCatResutls = session.query(Product_Catogory.category, Product_Catogory.category_name).all()
     session.close()
-    storeList = []    
+    storeList = [] 
+    store = {}
+    store["store_number"] = -1
+    store["store_name"] = 'New Store'    
+    storeList.append(store)
     for store_number,store_name in storeResults:
         store = {}
         store["store_number"] = store_number
@@ -71,7 +75,8 @@ def get_recommendations():
 def get_recommendations_for_store(store_id):
 
     users_to_recommend = []
-    users_to_recommend.append(store_id)
+    if store_id != -1:
+        users_to_recommend.append(store_id)
     data1 = modelC.recommend(users_to_recommend)
     prod_list = []
     for prod in list(data1):
