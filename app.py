@@ -42,7 +42,7 @@ def home():
     session.close()
     storeList = [] 
     store = {}
-    store["store_number"] = -1
+    store["store_number"] = 1
     store["store_name"] = 'New Store'    
     storeList.append(store)
     for store_number,store_name in storeResults:
@@ -75,7 +75,7 @@ def get_recommendations():
 def get_recommendations_for_store(store_id):
 
     users_to_recommend = []
-    if store_id != -1:
+    if store_id != 1:
         users_to_recommend.append(store_id)
     data1 = modelC.recommend(users_to_recommend)
     prod_list = []
@@ -176,9 +176,6 @@ def get_recommendations_for_cart():
 @app.route("/get_popularity_recommendations/<int:store_id>", methods=["GET"])
 def get_popularity_recommendations(store_id):
 
-    if store_id == -1:
-        # popularity based reeommendation is same for all users
-        store_id = 2652
     users_to_recommend = []
     users_to_recommend.append(store_id)
     data1 = modelPopular.recommend(users_to_recommend)
