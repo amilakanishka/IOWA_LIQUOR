@@ -176,6 +176,9 @@ def get_recommendations_for_cart():
 @app.route("/get_popularity_recommendations/<int:store_id>", methods=["GET"])
 def get_popularity_recommendations(store_id):
 
+    if store_id == -1:
+        # popularity based reeommendation is same for all users
+        store_id = 2652
     users_to_recommend = []
     users_to_recommend.append(store_id)
     data1 = modelPopular.recommend(users_to_recommend)
