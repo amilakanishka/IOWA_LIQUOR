@@ -32,7 +32,7 @@ function doShowAll() {
 
 function populateRecommendation(recommendDiv, path){
   var iowaList;
-  d3.select(string.concat('#', recommendDiv)).html("");
+  d3.select('#' + recommendDiv).html("");
   d3.json(path)
   .then(data => {iowaList = data;
   
