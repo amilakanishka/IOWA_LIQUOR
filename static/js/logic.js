@@ -116,8 +116,14 @@ function handleSubmit() {
   var iowaPath2 = `/get_recommendations_for_store/${customerSiteSelector}`
   var iowaPath3 = `/get_popularity_recommendations/${customerSiteSelector}`
 
-  populateRecommendation("recommend-product",iowaPath)
-  populateRecommendation("recommend-customer",iowaPath2)
-  populateRecommendation("recommend-popular",iowaPath3)
+  if(customerSiteSelector == '1'){
+    populateRecommendation("recommend-product",iowaPath);
+    populateRecommendation("recommend-popular",iowaPath3);
+  }
+  else{
+    populateRecommendation("recommend-product",iowaPath);
+    populateRecommendation("recommend-customer",iowaPath2);
+    populateRecommendation("recommend-popular",iowaPath3);
+  }
 
 }
