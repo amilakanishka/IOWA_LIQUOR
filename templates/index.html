@@ -104,6 +104,7 @@
                                     <select id="product_category" type="text" onchange="displayAccordingly()" placeholder="Category" autocomplete="on">
                                         <div id="catDiv">
                                             <ul id="catUL">
+                                                <option selected></option>
                                                 {% for p in prodCatList %}
                                                 <option value="{{ p['category'] }}">{{ p['category_name'] }}</option>
                                                 {% endfor %}
