@@ -93,7 +93,7 @@ function displayAccordingly() {
   var whereToPut = document.getElementById("product_name");
 
   // Clear list of options (if any)
-  document.querySelectorAll('#productUL option').forEach(option => option.remove())
+  document.querySelectorAll('#product_name option').forEach(option => option.remove())
 
   // Filter json to product category selected
   var productFilter = iowaCat.filter(element => element.category == prodCatValue);
