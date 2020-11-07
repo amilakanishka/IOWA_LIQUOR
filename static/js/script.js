@@ -84,8 +84,12 @@ document.querySelectorAll('#productUL option').forEach(option => option.remove()
 var productFilter = iowaCat.filter(element => element.category == prodCatValue);
 for (var i = 0; i < productFilter.length; i++) {
   var productOption = document.createElement("option");
-  productOption.text = productFilter[i].item_description["text"];
-  productOption.value = productFilter[i].item_number["value"];
+  productOption.text = productFilter[i].item_description;
+  productOption.value = productFilter[i].item_number;
   whereToPut.add(productOption,whereToPut.options[null]);
   };
 });
+
+// <!-- {% for r in prodDetailList %}
+// <option value="{{ r['item_number'] }}">{{ r['item_description'] }}</option>
+// {% endfor %} -->
