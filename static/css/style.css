@@ -270,7 +270,7 @@ h6 {
 
   .show {display: block;}
 
-  /* 6. CARD STYLING */
+  /* 6A. CARD STYLING */
 
   .card-deck {
     min-height: 320px;
@@ -332,7 +332,17 @@ h6 {
     padding-bottom:15px;
   }
 
+  /* 6B SHOPPING CART STYLING */
 
+  list {
+    border: solid;
+    border-color: #ddd;
+    padding: 10px;
+    width: 250px;
+    height: 390px;
+    display: flex;
+    flex: row;
+  }
   
   /* 7. IMAGE & OTHER STYLING */
 
