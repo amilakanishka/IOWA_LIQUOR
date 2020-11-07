@@ -116,9 +116,9 @@ function handleSubmit() {
   var iowaPath2 = `/get_recommendations_for_store/${customerSiteSelector}`
   var iowaPath3 = `/get_popularity_recommendations/${customerSiteSelector}`
 
-  populateRecommendation(iowaPath,"recommend-product")
-  populateRecommendation(iowaPath2,"recommend-customer")
-  populateRecommendation(iowaPath3,"recommend-popular")
+  populateRecommendation("recommend-product",iowaPath)
+  populateRecommendation("recommend-customer",iowaPath2)
+  populateRecommendation("recommend-popular",iowaPath3)
 
 // d3.select("#recommend-product").html("");
 // d3.select("#recommend-customer").html("");
