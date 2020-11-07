@@ -70,15 +70,15 @@ function hideFunction() {
 
 // 
 
+// Declare d3 path as variable
+var iowaPath4 = `/get_product_category_details`;
+
+// Set global variables
+var iowaCat;
+var prodCatValue;
+
 // DYNAMIC PRODUCT NAME DROPDOWN MENU
 function displayAccordingly() {
-
-  // Declare d3 path as variable
-  var iowaPath4 = `/get_product_category_details`;
-
-  // Set global variables
-  var iowaCat;
-  var prodCatValue;
 
   d3.json(iowaPath4)
   .then(data => {iowaCat = data
