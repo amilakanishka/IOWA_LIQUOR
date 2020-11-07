@@ -70,7 +70,8 @@ h6 {
     text-align: center;
     padding: 17px 17px;
     font-size: 20px;
-    margin-left: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 18px; 
@@ -97,7 +98,7 @@ h6 {
   /* 3. HEADER STYLE */
   #header {
     background-color: #fff5f0; /* Background Colour */
-    padding: 20px 20px; /* Some padding */
+    padding: 30px 30px; /* Some padding */
     color: black;
     position: fixed; /* Fixed position - sit on top of the page */
     top: 0;
@@ -269,7 +270,7 @@ h6 {
 
   .show {display: block;}
 
-  /* 6. CARD STYLING */
+  /* 6A. CARD STYLING */
 
   .card-deck {
     min-height: 320px;
@@ -331,7 +332,22 @@ h6 {
     padding-bottom:15px;
   }
 
+  /* 6B SHOPPING CART STYLING */
 
+  #list {
+    border: solid;
+    border-color: #ddd;
+    padding: 10px;
+    width: 400px;
+    height: 430px;
+    display: flex;
+    flex: row;
+  }
+
+  #items_table{
+    float: right;
+    color: #dda146;
+  }
   
   /* 7. IMAGE & OTHER STYLING */
 
@@ -405,10 +421,7 @@ h6 {
     display: block;
   }
 
-  #items_table{
-    float: right;
-    color: #dda146;
-  }
+
 
 /* Test CSS for Product Name */
 
