@@ -338,8 +338,8 @@ h6 {
     border: solid;
     border-color: #ddd;
     padding: 10px;
-    width: 300px;
-    height: 390px;
+    width: 400px;
+    height: 430px;
     display: flex;
     flex: row;
   }
