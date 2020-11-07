@@ -70,3 +70,16 @@ function hideFunction() {
 
 // 
 
+// DYNAMIC PRODUCT NAME DROPDOWN MENU
+var iowaPath4 = `/get_product_category_details`;
+var iowaCat;
+var prodCatValue;
+d3.json(iowaPath4)
+.then(data => {iowaCat = data;
+prodCatValue = d3.select('#product_category option:checked').node().value
+prodCatValue = parseInt(prodCatValue);
+console.log(prodCatValue);
+var whereToPut = document.getElementById("productUL");
+document.querySelectorAll('#productUL option').forEach(option => option.remove())
+iowaCat[0].category;
+});
