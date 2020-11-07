@@ -98,7 +98,7 @@ h6 {
   /* 3. HEADER STYLE */
   #header {
     background-color: #fff5f0; /* Background Colour */
-    padding: 20px 20px; /* Some padding */
+    padding: 30px 30px; /* Some padding */
     color: black;
     position: fixed; /* Fixed position - sit on top of the page */
     top: 0;
