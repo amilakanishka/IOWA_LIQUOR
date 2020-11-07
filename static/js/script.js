@@ -81,5 +81,11 @@ prodCatValue = parseInt(prodCatValue);
 console.log(prodCatValue);
 var whereToPut = document.getElementById("productUL");
 document.querySelectorAll('#productUL option').forEach(option => option.remove())
-iowaCat[0].category;
+var productFilter = iowaCat.filter(element => element.category == prodCatValue);
+for (var i = 0; i < productFilter.length; i++) {
+  var productOption = document.createElement("option");
+  productOption.text = productFilter[i].item_description["text"];
+  productOption.value = productFilter[i].item_number["value"];
+  whereToPut.add(productOption,whereToPut.options[null]);
+  };
 });
