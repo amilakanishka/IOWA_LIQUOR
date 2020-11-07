@@ -71,24 +71,42 @@ function hideFunction() {
 // 
 
 // DYNAMIC PRODUCT NAME DROPDOWN MENU
-var iowaPath4 = `/get_product_category_details`;
-var iowaCat;
-var prodCatValue;
-d3.json(iowaPath4)
-.then(data => {iowaCat = data
-prodCatValue = d3.select('#product_category option:checked').node().value
-prodCatValue = parseInt(prodCatValue);
-console.log(prodCatValue);
-var whereToPut = document.getElementById("product_name");
-document.querySelectorAll('#productUL option').forEach(option => option.remove())
-var productFilter = iowaCat.filter(element => element.category == prodCatValue);
-for (var i = 0; i < productFilter.length; i++) {
-  var productOption = document.createElement("option");
-  productOption.text = productFilter[i].item_description;
-  productOption.value = productFilter[i].item_number;
-  whereToPut.add(productOption,whereToPut.options[null]);
-  };
-});
+function displayAccordingly() {
+
+  // Declare d3 path as variable
+  var iowaPath4 = `/get_product_category_details`;
+
+  // Set global variables
+  var iowaCat;
+  var prodCatValue;
+
+  d3.json(iowaPath4)
+  .then(data => {iowaCat = data
+
+  // Get selected product category value
+  prodCatValue = d3.select('#product_category option:checked').node().value
+
+  // Format string to integer for filtering
+  prodCatValue = parseInt(prodCatValue);
+  
+  // Create the new dropdown menu
+  var whereToPut = document.getElementById("product_name");
+
+  // Clear list of options (if any)
+  document.querySelectorAll('#productUL option').forEach(option => option.remove())
+
+  // Filter json to product category selected
+  var productFilter = iowaCat.filter(element => element.category == prodCatValue);
+
+  // Loop to add list of options
+  for (var i = 0; i < productFilter.length; i++) {
+    var productOption = document.createElement("option");
+    productOption.text = productFilter[i].item_description;
+    productOption.value = productFilter[i].item_number;
+    whereToPut.add(productOption,whereToPut.options[null]);
+    };
+  });
+}
 
 // <!-- {% for r in prodDetailList %}
 // <option value="{{ r['item_number'] }}">{{ r['item_description'] }}</option>
