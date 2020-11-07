@@ -75,7 +75,7 @@ var iowaPath4 = `/get_product_category_details`;
 var iowaCat;
 var prodCatValue;
 d3.json(iowaPath4)
-.then(data => {iowaCat = data;
+.then(data => {iowaCat = data
 prodCatValue = d3.select('#product_category option:checked').node().value
 prodCatValue = parseInt(prodCatValue);
 console.log(prodCatValue);
