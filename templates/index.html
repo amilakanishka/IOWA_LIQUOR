@@ -116,9 +116,9 @@
                     <select id="product_category" type="text" onkeyup="myCategoryFunction()" placeholder="Category" autocomplete="on>
                         <div id="catDiv">
                             <ul id="catUL">
-                                <!-- {% for p in prodCatList %}
+                                {% for p in prodCatList %}
                                 <option value="{{ p['category'] }}">{{ p['category_name'] }}</option>
-                                {% endfor %} -->
+                                {% endfor %}
                             </ul>
                         </div>
                         </select>
@@ -129,9 +129,9 @@
                     <select id="product_name" type="text" onkeyup="myProductFunction()" placeholder="Product Name" autocomplete="on" required="required">
                         <div id="prodDiv">
                             <ul id="productUL">
-                                {% for r in prodDetailList %}
+                                <!-- {% for r in prodDetailList %}
                                 <option value="{{ r['item_number'] }}">{{ r['item_description'] }}</option>
-                                {% endfor %}
+                                {% endfor %} -->
                             </ul>
                         </div>
                     </select>  
