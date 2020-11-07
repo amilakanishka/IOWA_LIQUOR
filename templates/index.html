@@ -74,6 +74,7 @@
 <!-- SECTION 2 - ORDERING -->
 
     <section class="order">
+        <div class="col-md-6">
         <form>
         <div class="container">
             <div class="row">
@@ -86,36 +87,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
                 <div class="container">
                     <div class="card-deck">
                         <div class="card-btn text-center">
-                        <div class="card">
-                            <h5>Customer Name</h5>
-                                <select id="store_number" type="text" onkeyup="myStoreFunction()" placeholder="Store" autocomplete="on">
-                                <div id="storeDiv">
-                                    <ul id="storeUL">
-                                        {% for s in storeList %}
-                                        <option value="{{ s['store_number'] }}">{{ s['store_name'] }}</option>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                                </select>
-                        </div>  
+                            <div class="card">
+                                <h5>Customer Name</h5>
+                                    <select id="store_number" type="text" onkeyup="myStoreFunction()" placeholder="Store" autocomplete="on">
+                                        <div id="storeDiv">
+                                            <ul id="storeUL">
+                                                {% for s in storeList %}
+                                                <option value="{{ s['store_number'] }}">{{ s['store_name'] }}</option>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </select>
+                            </div>  
 
-                
-                        <div class="card">
-                            <h5>Product Category</h5>
-                            <select id="product_category" type="text" onkeyup="myCategoryFunction()" placeholder="Category" autocomplete="on>
-                                <div id="catDiv">
-                                    <ul id="catUL">
-                                        {% for p in prodCatList %}
-                                        <option value="{{ p['category'] }}">{{ p['category_name'] }}</option>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                                </select>
-                        </div> 
+                            <!-- WHAT THE HELL IS HAPPENING WITH LINE 109! -->
+                            <div class="card">
+                                <h5>Product Category</h5>
+                                    <select id="product_category" type="text" onkeyup="myCategoryFunction()" placeholder="Category" autocomplete="on>
+                                        <div id="catDiv">
+                                            <ul id="catUL">
+                                                {% for p in prodCatList %}
+                                                <option value="{{ p['category'] }}">{{ p['category_name'] }}</option>
+                                                {% endfor %}
+                                            </ul>
+                                        <!-- </div> -->
+                                    </select>
+                            </div> 
 
                         <div class="card">
                             <h5>Product Name</h5>
@@ -139,7 +139,6 @@
                         </div>
                     </div> 
                 </div>
-            </div>
         </div>
 
         <div class="container">
@@ -151,6 +150,7 @@
             </div>
         </div>
     </form>
+    </div>
 
     <!-- SHOPPING CART -->
     <div class="row">
