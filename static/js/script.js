@@ -79,7 +79,7 @@ d3.json(iowaPath4)
 prodCatValue = d3.select('#product_category option:checked').node().value
 prodCatValue = parseInt(prodCatValue);
 console.log(prodCatValue);
-var whereToPut = document.getElementById("productUL");
+var whereToPut = document.getElementById("product_name");
 document.querySelectorAll('#productUL option').forEach(option => option.remove())
 var productFilter = iowaCat.filter(element => element.category == prodCatValue);
 for (var i = 0; i < productFilter.length; i++) {
