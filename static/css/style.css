@@ -351,14 +351,14 @@ h6 {
 
   /* 6B SHOPPING CART STYLING */
 
-  .list {
-    border: solid;
-    border-color: #ddd;
+  #list {
+    /* border: solid; */
+    /* border-color: #ddd; */
     padding: 10px;
     width: 350px;
     height: 430px;
-    display: flex;
-    flex: row;
+    /* display: flex; */
+    /* flex: row; */
   }
 
   .items_table{
