@@ -1,5 +1,9 @@
 
 var prod_list = [];
+// handling recommendations on first load
+handleDivVisibility("recommend-product-head",false);
+handleDivVisibility("recommend-popular-head",true);
+handleDivVisibility("recommend-customer-head",false);
 
 d3.select("#submit").on("click", handleSubmit);
 
