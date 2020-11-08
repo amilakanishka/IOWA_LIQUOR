@@ -97,6 +97,17 @@ function populateRecommendation(recommendDiv, path){
   })
 }
 
+function handleDivVisibility(divItem, isVisible){
+  var divElement = d3.select('#' + divItem)
+  if(isVisible){
+    divElement.style.visibility='visible';
+  }
+  else{
+    divElement.style.visibility='hidden';
+  }
+
+}
+
 function handleSubmit() {
 // Prevent the page from refreshing
   d3.event.preventDefault();
@@ -119,11 +130,17 @@ function handleSubmit() {
   if(customerSiteSelector == '1'){
     populateRecommendation("recommend-product",iowaPath);
     populateRecommendation("recommend-popular",iowaPath3);
+    handleDivVisibility("recommend-product-head",true);
+    handleDivVisibility("recommend-popular-head",true);
+    handleDivVisibility("recommend-customer-head",false);
   }
   else{
     populateRecommendation("recommend-product",iowaPath);
     populateRecommendation("recommend-customer",iowaPath2);
     populateRecommendation("recommend-popular",iowaPath3);
+    handleDivVisibility("recommend-product-head",true);
+    handleDivVisibility("recommend-popular-head",true);
+    handleDivVisibility("recommend-customer-head",true);
   }
 
 }
