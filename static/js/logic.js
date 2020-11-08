@@ -98,7 +98,7 @@ function populateRecommendation(recommendDiv, path){
 }
 
 function handleDivVisibility(divItem, isVisible){
-  var divElement = d3.select('#' + divItem)
+  var divElement = d3.select('#' + divItem);
   if(isVisible){
     divElement.style.visibility='visible';
   }
