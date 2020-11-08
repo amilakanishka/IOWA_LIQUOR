@@ -318,7 +318,7 @@ h6 {
     border-radius: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .containerProd {
@@ -340,6 +340,13 @@ h6 {
   .recommend-text {
     padding-top: 15px;
     padding-bottom:15px;
+  }
+
+  .form-control {
+    border-radius: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
   }
 
   /* 6B SHOPPING CART STYLING */
