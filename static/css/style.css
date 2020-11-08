@@ -348,6 +348,14 @@ h6 {
     float: right;
     color: #ddd;
   }
+
+  .table {
+    width: 100%;
+    padding: 15px;
+    border-spacing: 5px;
+    background-color: #ddd;
+
+  }
   
   /* 7. IMAGE & OTHER STYLING */
 
