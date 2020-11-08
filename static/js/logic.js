@@ -99,10 +99,10 @@ function populateRecommendation(recommendDiv, path){
 
 function handleDivVisibility(divItem, isVisible){
   if(isVisible){
-    d3.select('#' + divItem).styles({'display': 'block'});
+    document.getElementById(divItem).style.display = "block";
   }
   else{
-    d3.select('#' + divItem).styles({'display': 'none'});
+    document.getElementById(divItem).style.display = "none";
   }
 
 }
