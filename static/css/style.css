@@ -287,10 +287,10 @@ h6 {
   }
 
   .card {
-    background-color: #ddd;
+    background-color: #3a3a3a;
     padding: 25px 25px, 15px 15px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    transition: 0.5s;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.5s; */
     font-size: 16px;
     height: 110px;
   }
@@ -357,12 +357,12 @@ h6 {
     padding: 10px;
     width: 350px;
     height: 430px;
-    /* display: flex; */
-    /* flex: row; */
+    display: flex;
+    flex: row;
   }
 
   .items_table{
-    /* float: right; */
+    float: right;
     color: #ddd;
     
   }
