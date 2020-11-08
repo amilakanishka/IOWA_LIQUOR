@@ -23,7 +23,7 @@ function doShowAll() {
 		}
 		//if no item exists in the cart
 		if (list == "<tr><th>Product</th><th>Quantity</th></tr>\n") {
-			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
+			list += "<tr><td><i>Item is Empty</i></td>\n<td><i>Quantity is Empty</i></td></tr>\n";
 		}
 		//bind the data to html table
 		//you can use jQuery too....

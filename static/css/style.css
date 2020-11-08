@@ -366,6 +366,16 @@ h6 {
     background-color: #ddd;
 
   }
+
+  .td {
+    text-align: right;
+  }
+
+  .td.first {
+    text-align: left;
+  }
+
+
   
   /* 7. IMAGE & OTHER STYLING */
 
