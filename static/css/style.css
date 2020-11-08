@@ -351,7 +351,7 @@ h6 {
 
   /* 6B SHOPPING CART STYLING */
 
-  #list {
+  .list {
     border: solid;
     border-color: #ddd;
     padding: 10px;
@@ -361,8 +361,8 @@ h6 {
     flex: row;
   }
 
-  #items_table{
-    float: right;
+  .items_table{
+    /* float: right; */
     color: #ddd;
   }
 
@@ -374,11 +374,16 @@ h6 {
 
   }
 
-  #td {
+  .tbody {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .td {
     text-align: right;
   }
 
-  #td.first {
+  .td.first {
     text-align: left;
   }
 
