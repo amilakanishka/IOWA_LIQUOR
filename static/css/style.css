@@ -364,6 +364,7 @@ h6 {
   .items_table{
     /* float: right; */
     color: #ddd;
+    padding: 10px;
   }
 
   .table {
