@@ -367,11 +367,11 @@ h6 {
 
   }
 
-  .td {
+  #td {
     text-align: right;
   }
 
-  .td.first {
+  #td.first {
     text-align: left;
   }
 
