@@ -293,6 +293,7 @@ h6 {
     transition: 0.5s; */
     font-size: 16px;
     height: 110px;
+    width: 500;
   }
 
   .card-team {
