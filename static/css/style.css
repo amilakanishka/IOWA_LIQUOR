@@ -53,7 +53,7 @@ h6 {
 }
 
 .hero3-text {
-  colour: black;
+  color: black;
 }
 
  /* 2. MENU & NAVBAR */
@@ -348,6 +348,10 @@ h6 {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+  }
+
+  .option {
+    max-width: 400px;
   }
 
   /* 6B SHOPPING CART STYLING */
